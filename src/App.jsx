@@ -14,6 +14,10 @@ const App = () => {
   const [displayabs, setdisplayabs] = useState(true);
   const [width, setWidth] = useState(window.innerWidth);
   const [maxWidth, setMaxWidth] = useState("100%");
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show button when page is scrolled down
+
   useEffect(() => {
     handleResize();
 
@@ -27,10 +31,13 @@ const App = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   const HandleClickMenu = () => {
     menuShow == "-500px" ? setmenuShow("0px") : setmenuShow("-500px");
-
-    
   };
 
   const handleResize = () => {
@@ -38,6 +45,21 @@ const App = () => {
 
     menuShow == "-500px" ? setmenuShow("0px") : setmenuShow("-500px");
     console.log(width);
+  };
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
   return (
     <div className="body" style={{ display: display }}>
@@ -51,6 +73,11 @@ const App = () => {
         <div className="menu_btn" onClick={() => HandleClickMenu()}>
           <i class="bx bx-menu"></i>
         </div>
+
+        <div className="scrollTopButton" onClick={() => scrollToTop()}>
+          <a class="bx bx-chevron-up" href="#home"></a>
+        </div>
+
         <HeroContainer />
 
         <SectionAbout />
