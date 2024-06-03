@@ -10,14 +10,14 @@ function ComponentPortfolioPromotion({ url, linkRedirect, linkShare }) {
           backgroundSize: "cover",
           height: "100%",
           borderRadius: "8px",
-          position:'relative'
+          position: "relative",
         }}
       >
         <div className="buttons container_flex">
-          <a href={linkShare} className="portfolio_buttons">
+          <a href={linkShare} className="portfolio_buttons" target="_blank">
             <i className="bx bx-plus"></i>
           </a>
-          <a href={linkRedirect} className="portfolio_buttons">
+          <a href={linkRedirect} className="portfolio_buttons" target="_blank">
             <i className="bx bxs-share"></i>
           </a>
         </div>

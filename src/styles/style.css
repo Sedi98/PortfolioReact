@@ -137,8 +137,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(https://picsum.photos/id/237/1000);
-  background-position: center;
+  background: url(../assets/img/prof3.jpeg);
+  background-position:top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

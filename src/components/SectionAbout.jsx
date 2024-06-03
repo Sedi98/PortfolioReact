@@ -4,6 +4,12 @@ import SectionTitleComponent from "./SectionTitleComponent";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
+
+
+// image
+
+import profile from '../assets/img/prof1.jpeg'
+
 function SectionAbout() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -26,7 +32,7 @@ function SectionAbout() {
               transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
             }}
           >
-            <img src="https://picsum.photos/id/237/1000" alt="" />
+            <img src={profile} alt="" />
           </div>
           <div
             className="flex_right"

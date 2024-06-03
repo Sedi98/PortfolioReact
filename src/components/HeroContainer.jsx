@@ -31,6 +31,7 @@ function HeroContainer() {
                 "Project Developer",
                 3000,
                 "Gamer", // Types 'Three' without deleting 'Two'
+                3000,
                 () => {
                   console.log("Sequence completed");
                 },
